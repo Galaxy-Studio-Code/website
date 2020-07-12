@@ -1,18 +1,24 @@
 ---
 layout: page
 title: About
-description: 打码改变世界
-keywords: Zhuang Ma, 马壮
+description: 星际工作室
+keywords: 星际工作室
 comments: true
 menu: 关于
 permalink: /about/
 ---
 
-我是马壮，码而生，码而立。
+# 星际工作室
 
-仰慕「优雅编码的艺术」。
+![img](https://raw.githubusercontent.com/Galaxy-Studio-Code/galaxy-studio-code.github.io/master/image1.png)
 
-坚信熟能生巧，努力改变人生。
+星际工作室成立于2020年，致力于开发软件。目前星际工作室共14名成员，包括技术部4人，测试部3人，营销部2人，售后部2人，人事部3人。相信未来的星际工作室会越来越强大！若您有好的素材、想法（皆与编程有关），欢迎您与我们交流！
+
+**星光不负赶路人，星际伴你前行！**
+
+**注意事项：** 本工作室开发的软件仅限Windows及Linux系统使用，苹果系列（Unix除外）系统无法使用，敬请谅解！本工作室开发的所有软件均由星际工作室版权所有，请勿抄袭源代码，违者后果自负！本工作室开发的所有软件未经本工作室允许，不得用于商业用途。如有非星际工作室成员给您发来星际工作室的软件，请立即联系我们，并告知其来源，谢谢！若您在使用我们的软件时遇到困难或发现我们软件有漏洞，请尽快反馈给我们，很抱歉给您带来不便。
+
+**欢迎您随时光临星际工作室！**
 
 ## 联系
 
@@ -22,8 +28,6 @@ permalink: /about/
 {% endfor %}
 {% if site.url contains 'mazhuang.org' %}
 <li>
-微信公众号：<br />
-<img style="height:192px;width:192px;border:1px solid lightgrey;" src="{{ assets_base_url }}/assets/images/qrcode.jpg" alt="闷骚的程序员" />
 </li>
 {% endif %}
 </ul>
