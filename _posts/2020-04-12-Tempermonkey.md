@@ -4702,18 +4702,14 @@ document.addEventListener('copy', addLink);
  */
 window.isDOMLoaded = false;
 window.isDOMRendered = false;
-
 document.addEventListener('readystatechange', function () {
     if (document.readyState === "interactive" || document.readyState === "complete") {
         window.isDOMLoaded = true;
     }
 });
-
 ~function (global) {
-
     var workerURLs = [];
     var extraElements = [];
-
     var helper = function (eHookContext, timerContext, util) {
         return {
             applyUI: function () {
@@ -4868,3 +4864,5 @@ document.addEventListener('readystatechange', function () {
             },
             getHookedDateConstructor: function () {
                 return 
+
+```
