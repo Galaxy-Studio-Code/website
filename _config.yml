@@ -74,6 +74,10 @@ navs:
     label: 反馈问题
     
   -
+    href: /share/
+    label: 分享区
+    
+  -
     href: /about/
     label: 关于
 

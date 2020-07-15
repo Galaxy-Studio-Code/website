@@ -1,3 +1,13 @@
+---
+layout: share
+title: 分享区
+description: 分享
+keywords: 分享区
+comments: false
+menu: 分享区
+permalink: /share/
+---
+## 轻松说霸答案：
 ```json
 {
 	"TypeList": [{
