@@ -8,108 +8,6 @@ keywords: Android, adb
 
 ADB，即 Android Debug Bridge，它是 Android 开发/测试人员不可替代的强大工具，也是 Android 设备玩家的好玩具。
 
-* [基本用法](#基本用法)
-    * [命令语法](#命令语法)
-    * [为命令指定目标设备](#为命令指定目标设备)
-    * [启动/停止](#启动停止)
-    * [查看 adb 版本](#查看-adb-版本)
-    * [以 root 权限运行 adbd](#以-root-权限运行-adbd)
-    * [指定 adb server 的网络端口](#指定-adb-server-的网络端口)
-* [设备连接管理](#设备连接管理)
-    * [查询已连接设备/模拟器](#查询已连接设备模拟器)
-    * [USB 连接](#usb-连接)
-    * [无线连接（需要借助 USB 线）](#无线连接需要借助-usb-线)
-    * [无线连接（无需借助 USB 线）](#无线连接无需借助-usb-线)
-* [应用管理](#应用管理)
-    * [查看应用列表](#查看应用列表)
-        * [所有应用](#所有应用)
-        * [系统应用](#系统应用)
-        * [第三方应用](#第三方应用)
-        * [包名包含某字符串的应用](#包名包含某字符串的应用)
-    * [安装 APK](#安装-apk)
-    * [卸载应用](#卸载应用)
-    * [清除应用数据与缓存](#清除应用数据与缓存)
-    * [查看前台 Activity](#查看前台-activity)
-    * [查看正在运行的 Services](#查看正在运行的-services)
-    * [查看应用详细信息](#查看应用详细信息)
-    * [查看应用安装路径](#查看应用安装路径)
-* [与应用交互](#与应用交互)
-    * [启动应用/ 调起 Activity](#启动应用-调起-activity)
-    * [调起 Service](#调起-service)
-    * [停止 Service](#停止-service)
-    * [发送广播](#发送广播)
-    * [强制停止应用](#强制停止应用)
-    * [收紧内存](#收紧内存)
-* [文件管理](#文件管理)
-    * [复制设备里的文件到电脑](#复制设备里的文件到电脑)
-    * [复制电脑里的文件到设备](#复制电脑里的文件到设备)
-* [模拟按键/输入](#模拟按键输入)
-    * [电源键](#电源键)
-    * [菜单键](#菜单键)
-    * [HOME 键](#home-键)
-    * [返回键](#返回键)
-    * [音量控制](#音量控制)
-    * [媒体控制](#媒体控制)
-    * [点亮/熄灭屏幕](#点亮熄灭屏幕)
-    * [滑动解锁](#滑动解锁)
-    * [输入文本](#输入文本)
-* [查看日志](#查看日志)
-    * [Android 日志](#android-日志)
-        * [按级别过滤日志](#按级别过滤日志)
-        * [按 tag 和级别过滤日志](#按-tag-和级别过滤日志)
-        * [日志格式](#日志格式)
-        * [清空日志](#清空日志)
-    * [内核日志](#内核日志)
-* [查看设备信息](#查看设备信息)
-    * [型号](#型号)
-    * [电池状况](#电池状况)
-    * [屏幕分辨率](#屏幕分辨率)
-    * [屏幕密度](#屏幕密度)
-    * [显示屏参数](#显示屏参数)
-    * [android\_id](#android_id)
-    * [IMEI](#imei)
-    * [Android 系统版本](#android-系统版本)
-    * [IP 地址](#ip-地址)
-    * [Mac 地址](#mac-地址)
-    * [CPU 信息](#cpu-信息)
-    * [内存信息](#内存信息)
-    * [更多硬件与系统属性](#更多硬件与系统属性)
-* [修改设置](#修改设置)
-    * [分辨率](#分辨率)
-    * [屏幕密度](#屏幕密度-1)
-    * [显示区域](#显示区域)
-    * [关闭 USB 调试模式](#关闭-usb-调试模式)
-    * [允许/禁止访问非 SDK API](#允许禁止访问非-sdk-api)
-    * [状态栏和导航栏的显示隐藏](#状态栏和导航栏的显示隐藏)
-* [实用功能](#实用功能)
-    * [屏幕截图](#屏幕截图)
-    * [录制屏幕](#录制屏幕)
-    * [重新挂载 system 分区为可写](#重新挂载-system-分区为可写)
-    * [查看连接过的 WiFi 密码](#查看连接过的-wifi-密码)
-    * [设置系统日期和时间](#设置系统日期和时间)
-    * [重启手机](#重启手机)
-    * [检测设备是否已 root](#检测设备是否已-root)
-    * [使用 Monkey 进行压力测试](#使用-monkey-进行压力测试)
-    * [开启/关闭 WiFi](#开启关闭-wifi)
-* [刷机相关命令](#刷机相关命令)
-    * [重启到 Recovery 模式](#重启到-recovery-模式)
-    * [从 Recovery 重启到 Android](#从-recovery-重启到-android)
-    * [重启到 Fastboot 模式](#重启到-fastboot-模式)
-    * [通过 sideload 更新系统](#通过-sideload-更新系统)
-* [安全相关命令](#安全相关命令)
-    * [启用/禁用 SELinux](#启用禁用-selinux)
-    * [启用/禁用 dm_verity](#启用禁用-dm_verity)
-* [更多 adb shell 命令](#更多-adb-shell-命令)
-    * [查看进程](#查看进程)
-    * [查看实时资源占用情况](#查看实时资源占用情况)
-    * [查看进程 UID](#查看进程-uid)
-    * [其它](#其它)
-* [常见问题](#常见问题)
-    * [启动 adb server 失败](#启动-adb-server-失败)
-    * [com.android.ddmlib.AdbCommandRejectedException](#comandroidddmlibadbcommandrejectedexception)
-* [adb 的非官方实现](#adb-的非官方实现)
-* [相关命令](#相关命令)
-
 ## 基本用法
 
 ### 命令语法
@@ -2485,11 +2383,630 @@ Otherwise check for a confirmation dialog on your device.
 
 ## 相关命令
 
-* [aapt](./adb/related/aapt.md)
-* [am](./adb/related/am.md)
-* [dumsys](./adb/related/dumpsys.md)
-* [pm](./adb/related/pm.md)
-* [uiautomator](./adb/related/uiautomator.md)
+<details>
+    <summary>aapt</summary>
+<br>
+```sh
+Android Asset Packaging Tool
+
+Usage:
+ aapt l[ist] [-v] [-a] file.{zip,jar,apk}
+   List contents of Zip-compatible archive.
+
+ aapt d[ump] [--values] [--include-meta-data] WHAT file.{apk} [asset [asset ...]]
+   strings          Print the contents of the resource table string pool in the APK.
+   badging          Print the label and icon for the app declared in APK.
+   permissions      Print the permissions from the APK.
+   resources        Print the resource table from the APK.
+   configurations   Print the configurations in the APK.
+   xmltree          Print the compiled xmls in the given assets.
+   xmlstrings       Print the strings of the given compiled xml assets.
+
+ aapt p[ackage] [-d][-f][-m][-u][-v][-x][-z][-M AndroidManifest.xml] \
+        [-0 extension [-0 extension ...]] [-g tolerance] [-j jarfile] \
+        [--debug-mode] [--min-sdk-version VAL] [--target-sdk-version VAL] \
+        [--app-version VAL] [--app-version-name TEXT] [--custom-package VAL] \
+        [--rename-manifest-package PACKAGE] \
+        [--rename-instrumentation-target-package PACKAGE] \
+        [--utf16] [--auto-add-overlay] \
+        [--max-res-version VAL] \
+        [-I base-package [-I base-package ...]] \
+        [-A asset-source-dir]  [-G class-list-file] [-P public-definitions-file] \
+        [-D main-dex-class-list-file] \
+        [-S resource-sources [-S resource-sources ...]] \
+        [-F apk-file] [-J R-file-dir] \
+        [--product product1,product2,...] \
+        [-c CONFIGS] [--preferred-density DENSITY] \
+        [--split CONFIGS [--split CONFIGS]] \
+        [--feature-of package [--feature-after package]] \
+        [raw-files-dir [raw-files-dir] ...] \
+        [--output-text-symbols DIR]
+
+   Package the android resources.  It will read assets and resources that are
+   supplied with the -M -A -S or raw-files-dir arguments.  The -J -P -F and -R
+   options control which files are output.
+
+ aapt r[emove] [-v] file.{zip,jar,apk} file1 [file2 ...]
+   Delete specified files from Zip-compatible archive.
+
+ aapt a[dd] [-v] file.{zip,jar,apk} file1 [file2 ...]
+   Add specified files to Zip-compatible archive.
+
+ aapt c[runch] [-v] -S resource-sources ... -C output-folder ...
+   Do PNG preprocessing on one or several resource folders
+   and store the results in the output folder.
+
+ aapt s[ingleCrunch] [-v] -i input-file -o outputfile
+   Do PNG preprocessing on a single file.
+
+ aapt v[ersion]
+   Print program version.
+
+ Modifiers:
+   -a  print Android-specific data (resources, manifest) when listing
+   -c  specify which configurations to include.  The default is all
+       configurations.  The value of the parameter should be a comma
+       separated list of configuration values.  Locales should be specified
+       as either a language or language-region pair.  Some examples:
+            en
+            port,en
+            port,land,en_US
+   -d  one or more device assets to include, separated by commas
+   -f  force overwrite of existing files
+   -g  specify a pixel tolerance to force images to grayscale, default 0
+   -j  specify a jar or zip file containing classes to include
+   -k  junk path of file(s) added
+   -m  make package directories under location specified by -J
+   -u  update existing packages (add new, replace older, remove deleted files)
+   -v  verbose output
+   -x  create extending (non-application) resource IDs
+   -z  require localization of resource attributes marked with
+       localization="suggested"
+   -A  additional directory in which to find raw asset files
+   -G  A file to output proguard options into.
+   -D  A file to output proguard options for the main dex into.
+   -F  specify the apk file to output
+   -I  add an existing package to base include set
+   -J  specify where to output R.java resource constant definitions
+   -M  specify full path to AndroidManifest.xml to include in zip
+   -P  specify where to output public resource definitions
+   -S  directory in which to find resources.  Multiple directories will be scanned
+       and the first match found (left to right) will take precedence.
+   -0  specifies an additional extension for which such files will not
+       be stored compressed in the .apk.  An empty string means to not
+       compress any files at all.
+   --debug-mode
+       inserts android:debuggable="true" in to the application node of the
+       manifest, making the application debuggable even on production devices.
+   --include-meta-data
+       when used with "dump badging" also includes meta-data tags.
+   --pseudo-localize
+       generate resources for pseudo-locales (en-XA and ar-XB).
+   --min-sdk-version
+       inserts android:minSdkVersion in to manifest.  If the version is 7 or
+       higher, the default encoding for resources will be in UTF-8.
+   --target-sdk-version
+       inserts android:targetSdkVersion in to manifest.
+   --max-res-version
+       ignores versioned resource directories above the given value.
+   --values
+       when used with "dump resources" also includes resource values.
+   --version-code
+       inserts android:versionCode in to manifest.
+   --version-name
+       inserts android:versionName in to manifest.
+   --replace-version
+       If --version-code and/or --version-name are specified, these
+       values will replace any value already in the manifest. By
+       default, nothing is changed if the manifest already defines
+       these attributes.
+   --custom-package
+       generates R.java into a different package.
+   --extra-packages
+       generate R.java for libraries. Separate libraries with ':'.
+   --generate-dependencies
+       generate dependency files in the same directories for R.java and resource package
+   --auto-add-overlay
+       Automatically add resources that are only in overlays.
+   --preferred-density
+       Specifies a preference for a particular density. Resources that do not
+       match this density and have variants that are a closer match are removed.
+   --split
+       Builds a separate split APK for the configurations listed. This can
+       be loaded alongside the base APK at runtime.
+   --feature-of
+       Builds a split APK that is a feature of the apk specified here. Resources
+       in the base APK can be referenced from the the feature APK.
+   --feature-after
+       An app can have multiple Feature Split APKs which must be totally ordered.
+       If --feature-of is specified, this flag specifies which Feature Split APK
+       comes before this one. The first Feature Split APK should not define
+       anything here.
+   --rename-manifest-package
+       Rewrite the manifest so that its package name is the package name
+       given here.  Relative class names (for example .Foo) will be
+       changed to absolute names with the old package so that the code
+       does not need to change.
+   --rename-instrumentation-target-package
+       Rewrite the manifest so that all of its instrumentation
+       components target the given package.  Useful when used in
+       conjunction with --rename-manifest-package to fix tests against
+       a package that has been renamed.
+   --product
+       Specifies which variant to choose for strings that have
+       product variants
+   --utf16
+       changes default encoding for resources to UTF-16.  Only useful when API
+       level is set to 7 or higher where the default encoding is UTF-8.
+   --non-constant-id
+       Make the resources ID non constant. This is required to make an R java class
+       that does not contain the final value but is used to make reusable compiled
+       libraries that need to access resources.
+   --shared-lib
+       Make a shared library resource package that can be loaded by an application
+       at runtime to access the libraries resources. Implies --non-constant-id.
+   --app-as-shared-lib
+       Make an app resource package that also can be loaded as shared library at runtime.
+       Implies --non-constant-id.
+   --error-on-failed-insert
+       Forces aapt to return an error if it fails to insert values into the manifest
+       with --debug-mode, --min-sdk-version, --target-sdk-version --version-code
+       and --version-name.
+       Insertion typically fails if the manifest already defines the attribute.
+   --error-on-missing-config-entry
+       Forces aapt to return an error if it fails to find an entry for a configuration.
+   --output-text-symbols
+       Generates a text file containing the resource symbols of the R class in the
+       specified folder.
+   --ignore-assets
+       Assets to be ignored. Default pattern is:
+       !.svn:!.git:!.ds_store:!*.scc:.*:<dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~
+   --skip-symbols-without-default-localization
+       Prevents symbols from being generated for strings that do not have a default
+       localization
+   --no-version-vectors
+       Do not automatically generate versioned copies of vector XML resources.
+   --no-version-transitions
+       Do not automatically generate versioned copies of transition XML resources.
+   --private-symbols
+       Java package name to use when generating R.java for private resources.
+```
+***
+</details>
+
+<details>
+    <summary>am</summary>
+<br>
+```sh
+usage: am [subcommand] [options]
+usage: am start [-D] [-W] [-P <FILE>] [--start-profiler <FILE>]
+               [--sampling INTERVAL] [-R COUNT] [-S] [--opengl-trace]
+               [--user <USER_ID> | current] <INTENT>
+       am startservice [--user <USER_ID> | current] <INTENT>
+       am stopservice [--user <USER_ID> | current] <INTENT>
+       am force-stop [--user <USER_ID> | all | current] <PACKAGE>
+       am kill [--user <USER_ID> | all | current] <PACKAGE>
+       am kill-all
+       am broadcast [--user <USER_ID> | all | current] <INTENT>
+       am instrument [-r] [-e <NAME> <VALUE>] [-p <FILE>] [-w]
+               [--user <USER_ID> | current]
+               [--no-window-animation] [--abi <ABI>] <COMPONENT>
+       am profile start [--user <USER_ID> current] [--sampling INTERVAL] <PROCESS> <FILE>
+       am profile stop [--user <USER_ID> current] [<PROCESS>]
+       am dumpheap [--user <USER_ID> current] [-n] <PROCESS> <FILE>
+       am set-debug-app [-w] [--persistent] <PACKAGE>
+       am clear-debug-app
+       am set-watch-heap <PROCESS> <MEM-LIMIT>
+       am clear-watch-heap
+       am monitor [--gdb <port>]
+       am hang [--allow-restart]
+       am restart
+       am idle-maintenance
+       am screen-compat [on|off] <PACKAGE>
+       am package-importance <PACKAGE>
+       am to-uri [INTENT]
+       am to-intent-uri [INTENT]
+       am to-app-uri [INTENT]
+       am switch-user <USER_ID>
+       am start-user <USER_ID>
+       am stop-user [-w] <USER_ID>
+       am stack start <DISPLAY_ID> <INTENT>
+       am stack movetask <TASK_ID> <STACK_ID> [true|false]
+       am stack resize <STACK_ID> <LEFT,TOP,RIGHT,BOTTOM>
+       am stack split <STACK_ID> <v|h> [INTENT]
+       am stack list
+       am stack info <STACK_ID>
+       am task lock <TASK_ID>
+       am task lock stop
+       am task resizeable <TASK_ID> [true|false]
+       am task resize <TASK_ID> <LEFT,TOP,RIGHT,BOTTOM>
+       am get-config
+       am set-inactive [--user <USER_ID>] <PACKAGE> true|false
+       am get-inactive [--user <USER_ID>] <PACKAGE>
+       am send-trim-memory [--user <USER_ID>] <PROCESS>
+               [HIDDEN|RUNNING_MODERATE|BACKGROUND|RUNNING_LOW|MODERATE|RUNNING_CRITICAL|COMPLETE]
+
+am start: start an Activity.  Options are:
+    -D: enable debugging
+    -W: wait for launch to complete
+    --start-profiler <FILE>: start profiler and send results to <FILE>
+    --sampling INTERVAL: use sample profiling with INTERVAL microseconds
+        between samples (use with --start-profiler)
+    -P <FILE>: like above, but profiling stops when app goes idle
+    -R: repeat the activity launch <COUNT> times.  Prior to each repeat,
+        the top activity will be finished.
+    -S: force stop the target app before starting the activity
+    --opengl-trace: enable tracing of OpenGL functions
+    --user <USER_ID> | current: Specify which user to run as; if not
+        specified then run as the current user.
+
+am startservice: start a Service.  Options are:
+    --user <USER_ID> | current: Specify which user to run as; if not
+        specified then run as the current user.
+
+am stopservice: stop a Service.  Options are:
+    --user <USER_ID> | current: Specify which user to run as; if not
+        specified then run as the current user.
+
+am force-stop: force stop everything associated with <PACKAGE>.
+    --user <USER_ID> | all | current: Specify user to force stop;
+        all users if not specified.
+
+am kill: Kill all processes associated with <PACKAGE>.  Only kills.
+  processes that are safe to kill -- that is, will not impact the user
+  experience.
+    --user <USER_ID> | all | current: Specify user whose processes to kill;
+        all users if not specified.
+
+am kill-all: Kill all background processes.
+
+am broadcast: send a broadcast Intent.  Options are:
+    --user <USER_ID> | all | current: Specify which user to send to; if not
+        specified then send to all users.
+    --receiver-permission <PERMISSION>: Require receiver to hold permission.
+
+am instrument: start an Instrumentation.  Typically this target <COMPONENT>
+  is the form <TEST_PACKAGE>/<RUNNER_CLASS>.  Options are:
+    -r: print raw results (otherwise decode REPORT_KEY_STREAMRESULT).  Use with
+        [-e perf true] to generate raw output for performance measurements.
+    -e <NAME> <VALUE>: set argument <NAME> to <VALUE>.  For test runners a
+        common form is [-e <testrunner_flag> <value>[,<value>...]].
+    -p <FILE>: write profiling data to <FILE>
+    -w: wait for instrumentation to finish before returning.  Required for
+        test runners.
+    --user <USER_ID> | current: Specify user instrumentation runs in;
+        current user if not specified.
+    --no-window-animation: turn off window animations while running.
+    --abi <ABI>: Launch the instrumented process with the selected ABI.
+        This assumes that the process supports the selected ABI.
+
+am profile: start and stop profiler on a process.  The given <PROCESS> argument
+  may be either a process name or pid.  Options are:
+    --user <USER_ID> | current: When supplying a process name,
+        specify user of process to profile; uses current user if not specified.
+
+am dumpheap: dump the heap of a process.  The given <PROCESS> argument may
+  be either a process name or pid.  Options are:
+    -n: dump native heap instead of managed heap
+    --user <USER_ID> | current: When supplying a process name,
+        specify user of process to dump; uses current user if not specified.
+
+am set-debug-app: set application <PACKAGE> to debug.  Options are:
+    -w: wait for debugger when application starts
+    --persistent: retain this value
+
+am clear-debug-app: clear the previously set-debug-app.
+
+am set-watch-heap: start monitoring pss size of <PROCESS>, if it is at or
+    above <HEAP-LIMIT> then a heap dump is collected for the user to report
+
+am clear-watch-heap: clear the previously set-watch-heap.
+
+am bug-report: request bug report generation; will launch UI
+    when done to select where it should be delivered.
+
+am monitor: start monitoring for crashes or ANRs.
+    --gdb: start gdbserv on the given port at crash/ANR
+
+am hang: hang the system.
+    --allow-restart: allow watchdog to perform normal system restart
+
+am restart: restart the user-space system.
+
+am idle-maintenance: perform idle maintenance now.
+
+am screen-compat: control screen compatibility mode of <PACKAGE>.
+
+am package-importance: print current importance of <PACKAGE>.
+
+am to-uri: print the given Intent specification as a URI.
+
+am to-intent-uri: print the given Intent specification as an intent: URI.
+
+am to-app-uri: print the given Intent specification as an android-app: URI.
+
+am switch-user: switch to put USER_ID in the foreground, starting
+  execution of that user if it is currently stopped.
+
+am start-user: start USER_ID in background if it is currently stopped,
+  use switch-user if you want to start the user in foreground.
+
+am stop-user: stop execution of USER_ID, not allowing it to run any
+  code until a later explicit start or switch to it.
+  -w: wait for stop-user to complete.
+
+am stack start: start a new activity on <DISPLAY_ID> using <INTENT>.
+
+am stack movetask: move <TASK_ID> from its current stack to the top (true) or   bottom (false) of <STACK_ID>.
+
+am stack resize: change <STACK_ID> size and position to <LEFT,TOP,RIGHT,BOTTOM>.
+
+am stack split: split <STACK_ID> into 2 stacks <v>ertically or <h>orizontally
+   starting the new stack with [INTENT] if specified. If [INTENT] isn't
+   specified and the current stack has more than one task, then the top task
+   of the current task will be moved to the new stack. Command will also force
+   all current tasks in both stacks to be resizeable.
+
+am stack list: list all of the activity stacks and their sizes.
+
+am stack info: display the information about activity stack <STACK_ID>.
+
+am task lock: bring <TASK_ID> to the front and don't allow other tasks to run.
+
+am task lock stop: end the current task lock.
+
+am task resizeable: change if <TASK_ID> is resizeable (true) or not (false).
+
+am task resize: makes sure <TASK_ID> is in a stack with the specified bounds.
+   Forces the task to be resizeable and creates a stack if no existing stack
+   has the specified bounds.
+
+am get-config: retrieve the configuration and any recent configurations
+  of the device.
+
+am set-inactive: sets the inactive state of an app.
+
+am get-inactive: returns the inactive state of an app.
+
+am send-trim-memory: Send a memory trim event to a <PROCESS>.
+
+<INTENT> specifications include these flags and arguments:
+    [-a <ACTION>] [-d <DATA_URI>] [-t <MIME_TYPE>]
+    [-c <CATEGORY> [-c <CATEGORY>] ...]
+    [-e|--es <EXTRA_KEY> <EXTRA_STRING_VALUE> ...]
+    [--esn <EXTRA_KEY> ...]
+    [--ez <EXTRA_KEY> <EXTRA_BOOLEAN_VALUE> ...]
+    [--ei <EXTRA_KEY> <EXTRA_INT_VALUE> ...]
+    [--el <EXTRA_KEY> <EXTRA_LONG_VALUE> ...]
+    [--ef <EXTRA_KEY> <EXTRA_FLOAT_VALUE> ...]
+    [--eu <EXTRA_KEY> <EXTRA_URI_VALUE> ...]
+    [--ecn <EXTRA_KEY> <EXTRA_COMPONENT_NAME_VALUE>]
+    [--eia <EXTRA_KEY> <EXTRA_INT_VALUE>[,<EXTRA_INT_VALUE...]]
+        (mutiple extras passed as Integer[])
+    [--eial <EXTRA_KEY> <EXTRA_INT_VALUE>[,<EXTRA_INT_VALUE...]]
+        (mutiple extras passed as List<Integer>)
+    [--ela <EXTRA_KEY> <EXTRA_LONG_VALUE>[,<EXTRA_LONG_VALUE...]]
+        (mutiple extras passed as Long[])
+    [--elal <EXTRA_KEY> <EXTRA_LONG_VALUE>[,<EXTRA_LONG_VALUE...]]
+        (mutiple extras passed as List<Long>)
+    [--efa <EXTRA_KEY> <EXTRA_FLOAT_VALUE>[,<EXTRA_FLOAT_VALUE...]]
+        (mutiple extras passed as Float[])
+    [--efal <EXTRA_KEY> <EXTRA_FLOAT_VALUE>[,<EXTRA_FLOAT_VALUE...]]
+        (mutiple extras passed as List<Float>)
+    [--esa <EXTRA_KEY> <EXTRA_STRING_VALUE>[,<EXTRA_STRING_VALUE...]]
+        (mutiple extras passed as String[]; to embed a comma into a string,
+         escape it using "\,")
+    [--esal <EXTRA_KEY> <EXTRA_STRING_VALUE>[,<EXTRA_STRING_VALUE...]]
+        (mutiple extras passed as List<String>; to embed a comma into a string,
+         escape it using "\,")
+    [--grant-read-uri-permission] [--grant-write-uri-permission]
+    [--grant-persistable-uri-permission] [--grant-prefix-uri-permission]
+    [--debug-log-resolution] [--exclude-stopped-packages]
+    [--include-stopped-packages]
+    [--activity-brought-to-front] [--activity-clear-top]
+    [--activity-clear-when-task-reset] [--activity-exclude-from-recents]
+    [--activity-launched-from-history] [--activity-multiple-task]
+    [--activity-no-animation] [--activity-no-history]
+    [--activity-no-user-action] [--activity-previous-is-top]
+    [--activity-reorder-to-front] [--activity-reset-task-if-needed]
+    [--activity-single-top] [--activity-clear-task]
+    [--activity-task-on-home]
+    [--receiver-registered-only] [--receiver-replace-pending]
+    [--selector]
+    [<URI> | <PACKAGE> | <COMPONENT>]
+```
+***
+</details>
+
+<details>
+    <summary>dumpsys</summary>
+<br>
+### 获取当前Activity
+
+Linux:
+```sh
+adb shell dumpsys activity | grep "mFocusedActivity"
+```
+
+Windows:
+```sh
+adb shell dumpsys activity  | findstr "mFocusedActicity"
+```
+
+### 获取当前Window
+
+```sh
+adb shell dumpsys window w | grep \/  |  grep name=
+```
+***
+</details>
+
+<details>
+    <summary>pm</summary>
+<br>
+## pm --help
+
+```sh
+usage: pm list packages [-f] [-d] [-e] [-s] [-3] [-i] [-u] [--user USER_ID] [FILTER]
+       pm list permission-groups
+       pm list permissions [-g] [-f] [-d] [-u] [GROUP]
+       pm list instrumentation [-f] [TARGET-PACKAGE]
+       pm list features
+       pm list libraries
+       pm list users
+       pm path PACKAGE
+       pm dump PACKAGE
+       pm install [-lrtsfd] [-i PACKAGE] [--user USER_ID] [PATH]
+       pm install-create [-lrtsfdp] [-i PACKAGE] [-S BYTES]
+               [--install-location 0/1/2]
+               [--force-uuid internal|UUID]
+       pm install-write [-S BYTES] SESSION_ID SPLIT_NAME [PATH]
+       pm install-commit SESSION_ID
+       pm install-abandon SESSION_ID
+       pm uninstall [-k] [--user USER_ID] PACKAGE
+       pm set-installer PACKAGE INSTALLER
+       pm move-package PACKAGE [internal|UUID]
+       pm move-primary-storage [internal|UUID]
+       pm clear [--user USER_ID] PACKAGE
+       pm enable [--user USER_ID] PACKAGE_OR_COMPONENT
+       pm disable [--user USER_ID] PACKAGE_OR_COMPONENT
+       pm disable-user [--user USER_ID] PACKAGE_OR_COMPONENT
+       pm disable-until-used [--user USER_ID] PACKAGE_OR_COMPONENT
+       pm hide [--user USER_ID] PACKAGE_OR_COMPONENT
+       pm unhide [--user USER_ID] PACKAGE_OR_COMPONENT
+       pm grant [--user USER_ID] PACKAGE PERMISSION
+       pm revoke [--user USER_ID] PACKAGE PERMISSION
+       pm reset-permissions
+       pm set-app-link [--user USER_ID] PACKAGE {always|ask|never|undefined}
+       pm get-app-link [--user USER_ID] PACKAGE
+       pm set-install-location [0/auto] [1/internal] [2/external]
+       pm get-install-location
+       pm set-permission-enforced PERMISSION [true|false]
+       pm trim-caches DESIRED_FREE_SPACE [internal|UUID]
+       pm create-user [--profileOf USER_ID] [--managed] USER_NAME
+       pm remove-user USER_ID
+       pm get-max-users
+
+pm list packages: prints all packages, optionally only
+  those whose package name contains the text in FILTER.  Options:
+    -f: see their associated file.
+    -d: filter to only show disbled packages.
+    -e: filter to only show enabled packages.
+    -s: filter to only show system packages.
+    -3: filter to only show third party packages.
+    -i: see the installer for the packages.
+    -u: also include uninstalled packages.
+
+pm list permission-groups: prints all known permission groups.
+
+pm list permissions: prints all known permissions, optionally only
+  those in GROUP.  Options:
+    -g: organize by group.
+    -f: print all information.
+    -s: short summary.
+    -d: only list dangerous permissions.
+    -u: list only the permissions users will see.
+
+pm list instrumentation: use to list all test packages; optionally
+  supply <TARGET-PACKAGE> to list the test packages for a particular
+  application.  Options:
+    -f: list the .apk file for the test package.
+
+pm list features: prints all features of the system.
+
+pm list users: prints all users on the system.
+
+pm path: print the path to the .apk of the given PACKAGE.
+
+pm dump: print system state associated with the given PACKAGE.
+
+pm install: install a single legacy package
+pm install-create: create an install session
+    -l: forward lock application
+    -r: replace existing application
+    -t: allow test packages
+    -i: specify the installer package name
+    -s: install application on sdcard
+    -f: install application on internal flash
+    -d: allow version code downgrade
+    -p: partial application install
+    -g: grant all runtime permissions
+    -S: size in bytes of entire session
+
+pm install-write: write a package into existing session; path may
+  be '-' to read from stdin
+    -S: size in bytes of package, required for stdin
+
+pm install-commit: perform install of fully staged session
+pm install-abandon: abandon session
+
+pm set-installer: set installer package name
+
+pm uninstall: removes a package from the system. Options:
+    -k: keep the data and cache directories around after package removal.
+
+pm clear: deletes all data associated with a package.
+
+pm enable, disable, disable-user, disable-until-used: these commands
+  change the enabled state of a given package or component (written
+  as "package/class").
+
+pm grant, revoke: these commands either grant or revoke permissions
+    to apps. The permissions must be declared as used in the app's
+    manifest, be runtime permissions (protection level dangerous),
+    and the app targeting SDK greater than Lollipop MR1.
+
+pm reset-permissions: revert all runtime permissions to their default state.
+
+pm get-install-location: returns the current install location.
+    0 [auto]: Let system decide the best location
+    1 [internal]: Install on internal device storage
+    2 [external]: Install on external media
+
+pm set-install-location: changes the default install location.
+  NOTE: this is only intended for debugging; using this can cause
+  applications to break and other undersireable behavior.
+    0 [auto]: Let system decide the best location
+    1 [internal]: Install on internal device storage
+    2 [external]: Install on external media
+
+pm trim-caches: trim cache files to reach the given free space.
+
+pm create-user: create a new user with the given USER_NAME,
+  printing the new user identifier of the user.
+
+pm remove-user: remove the user with the given USER_IDENTIFIER,
+  deleting all data associated with that user
+```
+
+## 查看手机中APK的存放位置
+```sh
+adb shell pm list packages -f
+```
+
+示例：
+```sh
+adb shell pm list packages -f | grep vivo 
+
+output:
+package:/system/app/BBKWeatherProvider/BBKWeatherProvider.apk=com.vivo.weather.provider
+package:/system/app/VivoSmartMultiWindow/VivoSmartMultiWindow.apk=com.vivo.smartmultiwindow
+package:/system/app/CoffeeTime/CoffeeTime.apk=com.vivo.livewallpaper.coffeetime
+package:/system/app/SetupWizard/SetupWizard.apk=com.vivo.setupwizard
+...
+```
+***
+</details>
+
+<details>
+    <summary>uiautomator</summary>
+<br>
+### 获取当前页面布局
+```sh
+adb shell uiautomator dump /data/local/tmp/uidump.xml  && adb pull /data/local/tmp/uidump.xml uidump.xml
+```
+***
+</details>
 
 ***
 
