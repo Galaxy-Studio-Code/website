@@ -10,7 +10,7 @@ permalink: /about/
 
 # 星际工作室
 
-![img](https://raw.githubusercontent.com/Galaxy-Studio-Code/galaxy-studio-code.github.io/master/image1.png)
+![img](https://cdn.jsdelivr.net/gh/Galaxy-Studio-Code/galaxy-studio-code.github.io/image1.png)
 
 星际工作室成立于2020年，致力于开发软件。目前星际工作室共14名成员，包括技术部4人，测试部3人，营销部2人，售后部2人，人事部3人。相信未来的星际工作室会越来越强大！若您有好的素材、想法（皆与编程有关），欢迎您与我们交流！
 
