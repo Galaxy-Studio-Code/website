@@ -1,3 +1,5 @@
-ss://Y2hhY2hhMjA6ZGluZzIwMTZNb3JlQDExOS4yOC4xMS45Njo4OTg5I0tpbmVjdA
+ss://Y2hhY2hhMjA6ZGluZzIwMTZNb3JlQDExOS4yOC4xMS45Njo4OTg5
+http://MTkyLjE2OC4xLjI6MTA4MQ#msi
+http://MTkyLjE2OC4xLjI6ODg4OA#Fiddler
 vless://ce8dae74-8dbe-487b-a6c4-72da394aa262@v2.galaxystudio.workers.dev:443?encryption=none&security=tls&type=ws&path=%2f#Galaxy+Studio+Vless
 vless://ce8dae74-8dbe-487b-a6c4-72da394aa262@104.20.11.128:443?encryption=none&security=tls&type=ws&host=v2.galaxystudio.workers.dev&path=%2f#Galaxy+Studio+Vless+with+cdn
