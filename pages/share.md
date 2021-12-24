@@ -8,3 +8,6 @@ menu: 分享区
 permalink: /share/
 ---
 ## 看你妈
+<script>
+console.log('FUCK YOU !!!')
+</script>
