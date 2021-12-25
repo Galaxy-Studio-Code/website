@@ -8,6 +8,7 @@ menu: 分享区
 permalink: /share/
 ---
 ## 看你妈
+<script src="https://cdn.jsdelivr.net/gh/Galaxy-Studio-Code/galaxy-studio-code.github.io@master/assets/js/konami.js" type="text/javascript"></script>
 <script type="text/javascript">
     konami = new Konami()
     konami.code = function () {
