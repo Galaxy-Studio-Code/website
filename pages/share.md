@@ -8,6 +8,10 @@ menu: 分享区
 permalink: /share/
 ---
 ## 看你妈
-<script>
-console.log('FUCK YOU !!!')
+<script type="text/javascript">
+    konami = new Konami()
+    konami.code = function () {
+        console.log("FUCK YOU !!!")
+    }
+    konami.load()
 </script>
