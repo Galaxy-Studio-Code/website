@@ -10,9 +10,9 @@ permalink: /share/
 ## 看你妈
 <script src="https://cdn.jsdelivr.net/gh/Galaxy-Studio-Code/galaxy-studio-code.github.io@master/assets/js/konami.js" type="text/javascript"></script>
 <script type="text/javascript">
-    konami = new Konami()
+    konami = new Konami();
     konami.code = function () {
-        console.log("FUCK YOU !!!")
+        console.log("FUCK YOU !!!");
     }
-    konami.load()
+    konami.load();
 </script>
