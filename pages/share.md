@@ -7,7 +7,7 @@ comments: true
 menu: 分享区
 permalink: /share/
 ---
-## 看你妈
+<video id="video" preload="auto"><source id="mp4" src="https://cdn.jsdelivr.net/gh/Galaxy-Studio-Code/galaxy-studio-code.github.io@master/media/emxw5Li65LuA5LmI5piv56We.mp4" type="video/mp4"></video>
 <script src="https://cdn.jsdelivr.net/gh/Galaxy-Studio-Code/galaxy-studio-code.github.io@master/assets/js/konami.js" type="text/javascript"></script>
 <script type="text/javascript">
 	console.log("Konami loading");
