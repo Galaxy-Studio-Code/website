@@ -13,5 +13,7 @@ permalink: /share/
 
 
 ~~手动输入：
-https://cdn.👍jsdelivr.👍net/gh/Galaxy-👍Studio-Code/galaxy-studio👍-code.github.io👍@master/media/👍MjAxNjk0MA.mp👍4
-https://cdn.👍jsdelivr.👍net/gh/Galaxy-👍Studio-Code/galaxy-studio👍-code.github.io👍@master/media/👍MjAxOTYxOA.mp👍4~~
+https://cdn.👍jsdelivr.👍net/gh/Galaxy-👍Studio-Code/galaxy-studio👍-code.github.io👍@master/media/👍MjAxNjk0MA.mp👍4~~
+
+
+~~https://cdn.👍jsdelivr.👍net/gh/Galaxy-👍Studio-Code/galaxy-studio👍-code.github.io👍@master/media/👍MjAxOTYxOA.mp👍4~~
