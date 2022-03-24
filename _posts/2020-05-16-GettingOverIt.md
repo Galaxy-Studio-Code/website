@@ -8,7 +8,7 @@ keywords: Games, Getting Over It
 
 ## 星际工作室第一款 2D 动画游戏 《Getting Over It》 发布
 
-![icon](https://raw.githubusercontent.com/Galaxy-Studio-Team/sources/master/Getting%20Over%20It/image-20200517083537434.png)
+![icon](https://cdn.jsdelivr.net/gh/Galaxy-Studio-Team/sources/Getting%20Over%20It/image-20200517083537434.png)
 
 ### 下载地址
 
